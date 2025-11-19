@@ -4,31 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio Profesional</title>
+    <title>Mi Portafolio ✨</title>
 
     <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- ======= ESTILOS CSS ======= -->
+    <!-- ======= ESTILOS CSS (MEJORADOS Y AESTHETIC) ======= -->
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+            font-family: "Quicksand", sans-serif;
         }
 
         body {
-            background: #f7f7f7;
-            color: #333;
+            background: linear-gradient(135deg, #ffe6f2, #e7d5ff, #d0f5ff);
+            background-size: 200% 200%;
+            animation: gradient 12s ease infinite;
+            color: #444;
             line-height: 1.6;
+        }
+
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
 
         h2 {
             text-align: center;
             margin-bottom: 20px;
             font-size: 2.2rem;
+            color: #d79bff;
+            text-shadow: 0 0 8px #f3d1ff;
         }
 
         /* ======= HEADER ======= */
@@ -37,8 +47,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
             position: fixed;
             width: 100%;
             top: 0;
@@ -46,19 +57,23 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: 700;
+            color: #ff9ccf;
+            text-shadow: 0 0 6px #ffbde0;
         }
 
         nav a {
             margin-left: 20px;
             text-decoration: none;
-            color: #333;
+            color: #444;
             font-weight: 600;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #007bff;
+            color: #ff9ccf;
+            text-shadow: 0 0 10px #ffbde0;
         }
 
         /* ======= HERO ======= */
@@ -72,40 +87,52 @@
             padding: 0 20px;
         }
 
+        .hero-content {
+            background: rgba(255, 255, 255, 0.45);
+            padding: 40px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px #ffc4e680;
+        }
+
         .hero h1 {
-            font-size: 3.2rem;
-            color: #fff;
+            font-size: 3rem;
+            color: #ff82c6;
+            text-shadow: 0 0 8px #ffd1ec;
         }
 
         .hero h1 span {
-            color: #00c3ff;
+            color: #d79bff;
         }
 
         .hero p {
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin: 10px 0 20px;
+            text-shadow: 0 0 6px #fface6;
         }
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: #00c3ff;
+            background: #ff9ccf;
             color: #fff;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 600;
             transition: 0.3s;
+            box-shadow: 0 5px 12px #ffbde0a6;
         }
 
         .btn:hover {
-            background: #008fba;
+            background: #ff77ba;
+            transform: scale(1.05);
         }
 
         /* ======= SOBRE MÍ ======= */
         .sobre-mi {
             padding: 90px 20px;
-            background: #fff;
+            background: #fff8ff;
         }
 
         .contenedor {
@@ -119,7 +146,13 @@
 
         .foto-perfil {
             width: 300px;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #d79bff75;
+        }
+
+        .texto-sobre-mi p {
+            font-size: 1.1rem;
+            color: #555;
         }
 
         .texto-sobre-mi ul {
@@ -127,12 +160,15 @@
         }
 
         .texto-sobre-mi li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: #7a5ca8;
+            font-weight: 600;
         }
 
         /* ======= PORTAFOLIO ======= */
         .portafolio {
             padding: 90px 20px;
+            background: #fff;
         }
 
         .grid-proyectos {
@@ -144,15 +180,17 @@
         }
 
         .proyecto {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.75);
             padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #ffc7e26f;
             transition: transform 0.3s;
+            backdrop-filter: blur(8px);
         }
 
         .proyecto:hover {
             transform: translateY(-8px);
+            box-shadow: 0 8px 25px #ffbde0a6;
         }
 
         .proyecto img {
@@ -164,22 +202,22 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background: #333;
+            background: #d79bff;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             transition: 0.3s;
         }
 
         .btn-proyecto:hover {
-            background: #000;
+            background: #c287f0;
         }
 
         /* ======= CONTACTO ======= */
         .contacto {
             padding: 90px 20px;
             text-align: center;
-            background: #fff;
+            background: #fff8ff;
         }
 
         form {
@@ -193,23 +231,26 @@
         form input,
         form textarea {
             padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: none;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px #ffbde05d;
         }
 
         form button {
             padding: 12px;
-            background: #00c3ff;
+            background: #ff9ccf;
             border: none;
             color: #fff;
             font-size: 1rem;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 12px #ffbde0a6;
         }
 
         form button:hover {
-            background: #0099cc;
+            background: #ff6fb4;
         }
 
         /* Redes sociales */
@@ -220,22 +261,16 @@
         }
 
         .redes img:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         /* ======= FOOTER ======= */
         footer {
             text-align: center;
             padding: 15px;
-            background: #222;
+            background: #ff9ccf;
             color: #fff;
-        }
-
-        /* ======= RESPONSIVE ======= */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
+            font-weight: 600;
         }
     </style>
 </head>
@@ -244,7 +279,7 @@
 
     <!-- ======= HEADER ======= -->
     <header>
-        <div class="logo">María Ouro</div>
+        <div class="logo">MiNombre ✨</div>
 
         <nav>
             <a href="#inicio">Inicio</a>
@@ -257,8 +292,8 @@
     <!-- ======= HERO ======= -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Hola, soy <span>María Ouro</span></h1>
-            <p>Desarrollador Web | Diseñador | Creativo</p>
+            <h1>Hola, soy <span>Tu Nombre</span> 💖</h1>
+            <p>Desarrolladora web • creativa • amante del aesthetic 🌸</p>
             <a href="#portafolio" class="btn">Ver Portafolio</a>
         </div>
     </section>
@@ -266,18 +301,22 @@
     <!-- ======= SOBRE MÍ ======= -->
     <section id="sobre-mi" class="sobre-mi">
         <div class="contenedor">
-            <img src="imagenes/foto25.HEIC" class="foto-perfil">
+            <img src="https://via.placeholder.com/300" alt="Foto personal" class="foto-perfil">
 
             <div class="texto-sobre-mi">
-                <h2>Sobre mí</h2>
-                <p>Soy una profesional apasionada por la tecnología y la creación de soluciones innovadoras.Me especializo en desarrollo web y diseño </p>
+                <h2>Sobre mí 🌈</h2>
+                <p>
+                    ¡Hola! Soy una chica de 16 años súper apasionada por el diseño y las cosas bonitas.
+                    Me encanta crear páginas web aesthetic, ordenadas y con mucha personalidad.  
+                    Siempre busco que lo que hago transmita creatividad, alegría y un toque cute ✨💗.
+                </p>
 
-                <h3>Habilidades</h3>
+                <h3 style="color:#d79bff;">Habilidades ✨</h3>
                 <ul>
-                    <li>HTML / CSS </li>
-                    <li>Diseño UI/UX</li>
-                    <li>Responsive Design</li>
-                    <li>Git & GitHub</li>
+                    <li>HTML / CSS / JavaScript con estilo pastel</li>
+                    <li>Diseño UI/UX aesthetic 🌸</li>
+                    <li>Edición digital y composición visual</li>
+                    <li>Responsive Design para que todo se vea cute en el móvil 💖</li>
                 </ul>
             </div>
         </div>
@@ -285,35 +324,35 @@
 
     <!-- ======= PORTAFOLIO ======= -->
     <section id="portafolio" class="portafolio">
-        <h2>Mi Portafolio</h2>
+        <h2>Mi Portafolio 💖</h2>
 
         <div class="grid-proyectos">
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400" alt="Proyecto 1">
-                <h3>Proyecto 1</h3>
-                <p>Sitio web moderno con diseño responsivo.</p>
+                <h3 style="color:#ff82c6;">Proyecto 1</h3>
+                <p>Un sitio web moderno con colores pastel ✨</p>
                 <a href="#" class="btn-proyecto">Ver más</a>
             </div>
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <p>Landing page con animaciones y efectos visuales.</p>
+                <h3 style="color:#ff82c6;">Proyecto 2</h3>
+                <p>Landing page aesthetic con animaciones suaves 🌸</p>
                 <a href="#" class="btn-proyecto">Ver más</a>
             </div>
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400" alt="Proyecto 3">
-                <h3>Proyecto 3</h3>
-                <p>Dashboard administrativo funcional y moderno.</p>
+                <h3 style="color:#ff82c6;">Proyecto 3</h3>
+                <p>Dashboard visual moderno y colorido 💗</p>
                 <a href="#" class="btn-proyecto">Ver más</a>
             </div>
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400" alt="Proyecto 4">
-                <h3>Proyecto 4</h3>
-                <p>Aplicación web integrada con API y base de datos.</p>
+                <h3 style="color:#ff82c6;">Proyecto 4</h3>
+                <p>App web conectada a una API con diseño cute 💫</p>
                 <a href="#" class="btn-proyecto">Ver más</a>
             </div>
 
@@ -322,13 +361,13 @@
 
     <!-- ======= CONTACTO ======= -->
     <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
+        <h2>Contacto 💌</h2>
 
         <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="text" placeholder="Nombre 💕" required>
+            <input type="email" placeholder="Correo ✨" required>
+            <textarea placeholder="Escribe tu mensaje bonito... 🌸" required></textarea>
+            <button type="submit">Enviar 💖</button>
         </form>
 
         <div class="redes">
@@ -341,7 +380,7 @@
 
     <!-- ======= FOOTER ======= -->
     <footer>
-        <p>© 2025 MiNombre — Todos los derechos reservados.</p>
+        <p>© 2025 MiNombre — Hecho con amor y glitter ✨💖</p>
     </footer>
 
 </body>
