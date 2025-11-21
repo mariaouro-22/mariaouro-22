@@ -22,8 +22,6 @@
         .logo { font-size: 1.6rem; font-weight: 700; color: white; }
         nav a { margin-left: 20px; text-decoration: none; color: white; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: #00c3ff; }
-
-
         .theme-toggle { cursor: pointer; font-size: 1.5rem; margin-left: 20px; }
 
 
@@ -46,6 +44,7 @@
         .proyecto { background: #fff; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s, box-shadow 0.3s; }
         body.dark .proyecto { background: #222; }
         .proyecto:hover { transform: translateY(-8px); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); }
+        .proyecto img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 10px; }
         .btn-proyecto { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; transition: 0.3s; }
         .btn-proyecto:hover { background: #444; }
 
@@ -60,8 +59,6 @@
 
 
 <body>
-
-
     <header>
         <div class="logo">María Ouro</div>
         <nav>
@@ -88,14 +85,13 @@
             <img src="imagenes/foto26.jpg" class="foto-perfil">
             <div class="texto-sobre-mi">
                 <h2>Sobre mí</h2>
-                <p>Tengo 15 años, soy alumna de 4º ESO en el Colegio Maristas Cartagena, he participado en varios proyectos como ABP, APS, SA y trabajos en grupo que me han enseñado a organizarme, comunicarme mejor y resolver problemas reales</p>
-               
+                <p>Tengo 15 años, soy alumna de 4º ESO en el Colegio Maristas Cartagena, he participado en varios proyectos como ABP, APS, SA y trabajos en grupo que me han enseñado a organizarme, comunicarme mejor y resolver problemas reales.</p>
                 <h3>Habilidades</h3>
                 <ul>
                     <li>Creativa</li>
                     <li>Responsable con mis tareas</li>
-                    <li>Capacidad de colaborar en proyecyos grupales (ABP,APS,SA)</li>
-                    <li>Manejo de Google Drive, Docs, Slides,etc...</li>
+                    <li>Capacidad de colaborar en proyectos grupales (ABP, APS, SA)</li>
+                    <li>Manejo de Google Drive, Docs, Slides, etc.</li>
                     <li>Git & GitHub</li>
                 </ul>
             </div>
@@ -171,7 +167,5 @@
             themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
         });
     </script>
-
-
 </body>
 </html>
