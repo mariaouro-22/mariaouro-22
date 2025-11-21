@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional</title>
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* PALETA */
+        :root {
+            --bg: #f7f7f7;
+            --text: #333;
+            --card: #fff;
+            --primary: #00c3ff;
+            --primary-dark: #0096c7;
+        }
+        body.dark {
+            --bg: #121212;
+            --text: #eee;
+            --card: #1e1e1e;
+        }
+
+        /* Animaciones */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0; left: 0;
+            background: var(--card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text);
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Botón Dark Mode */
+        .dark-toggle {
+            cursor: pointer;
+            background: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+        .dark-toggle:hover { background: var(--primary-dark); }
+
+        /* Menú hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 30px; height: 4px;
+            background: var(--text);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97") center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: #fff;
+        }
+        .hero span { color: var(--primary); }
+
+        .typing {
+            border-right: 3px solid var(--primary);
+            animation: typing 3s steps(30), blink .7s infinite;
+        }
+        @keyframes blink { 50% { border-color: transparent; } }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+            box-shadow: 0 0 10px var(--primary);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 0 20px var(--primary-dark);
+        }
+
+        /* Secciones */
+        section {
+            padding: 90px 20px;
+        }
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Imagen perfil */
+        .foto-perfil {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Portafolio */
+        .grid-proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .proyecto {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .proyecto:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .proyecto img { border-radius: 10px; width: 100%; }
+
+        .btn-proyecto {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-proyecto:hover { background: var(--primary-dark); }
+
+        /* Redes */
+        .redes img {
+            width: 45px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .redes img:hover {
+            transform: scale(1.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { 
+                display: none; 
+                flex-direction: column;
+                background: var(--card);
+                position: absolute;
+                top: 70px; right: 20px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+            nav.active { display: flex; }
+            .hamburger { display: flex; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">María Ouro</div>
+
+        <nav id="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="dark-toggle" id="darkBtn">☾</div>
+
+        <div class="hamburger" id="hamBtn">
+            <div></div><div></div><div></div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero fade-in">
+        <div>
+            <h1>Hola, soy <span>María</span></h1>
+            <p class="typing">Desarrolladora Web | Diseñadora | Creativa</p>
+            <a href="#portafolio" class="btn">Ver Portafolio</a>
+        </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" class="fade-in">
+        <div class="contenedor">
+            <img src="imagenes/foto26.jpg" class="foto-perfil">
+
+            <div>
+                <h2>Sobre mí</h2>
+                <p>Soy una profesional apasionada por la tecnología y el diseño.</p>
+
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>HTML / CSS / JavaScript</li>
+                    <li>Diseño UI/UX</li>
+                    <li>Responsive Design</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section id="portafolio" class="fade-in">
+        <h2 style="text-align:center; margin-bottom:20px;">Mi Portafolio</h2>
+
+        <div class="grid-proyectos">
+            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 1</h3><p>Sitio web moderno.</p><a class="btn-proyecto">Ver más</a></div>
+            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 2</h3><p>Landing animada.</p><a class="btn-proyecto">Ver más</a></div>
+            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 3</h3><p>Dashboard interactivo.</p><a class="btn-proyecto">Ver más</a></div>
+            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 4</h3><p>App con API.</p><a class="btn-proyecto">Ver más</a></div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="fade-in">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button class="btn">Enviar</button>
+        </form>
+
+        <div class="redes">
+            <a><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+            <a><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></a>
+            <a><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+            <a><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
+        </div>
+    </section>
+
+    <footer>© 2025 María Ouro — Todos los derechos reservados.</footer>
+
+    <!-- JS -->
+    <script>
+        // Menú hamburguesa
+        const hamBtn = document.getElementById("hamBtn");
+        const menu = document.getElementById("menu");
+        hamBtn.onclick = () => menu.classList.toggle("active");
+
+        // Dark Mode
+        const darkBtn = document.getElementById("darkBtn");
+        darkBtn.onclick = () => {
+            document.body.classList.toggle("dark");
+            darkBtn.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+        };
+    </script>
+
+</body>
+</html>
