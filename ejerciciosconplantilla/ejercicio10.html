@@ -1,110 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Profesional</title>
 
-    <!-- Fuente -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio María Ouro</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+
     <style>
-        /* RESET */
         * {
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
             font-family: "Poppins", sans-serif;
         }
 
+
         body {
-            background: var(--bg);
-            color: var(--text);
-            transition: background 0.3s, color 0.3s;
+            background: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* PALETA */
-        :root {
-            --bg: #f7f7f7;
-            --text: #333;
-            --card: #fff;
-            --primary: #00c3ff;
-            --primary-dark: #0096c7;
-        }
-        body.dark {
-            --bg: #121212;
-            --text: #eee;
-            --card: #1e1e1e;
-        }
 
-        /* Animaciones */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Header */
+        /* HEADER */
         header {
-            position: fixed;
-            width: 100%;
-            top: 0; left: 0;
-            background: var(--card);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
+            background: #000;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 10;
         }
+
 
         .logo {
             font-size: 1.6rem;
             font-weight: 700;
+            color: white;
         }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
 
         nav a {
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--text);
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Botón Dark Mode */
-        .dark-toggle {
-            cursor: pointer;
-            background: var(--primary);
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: #fff;
-            font-size: 0.9rem;
             margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
             transition: 0.3s;
         }
-        .dark-toggle:hover { background: var(--primary-dark); }
 
-        /* Menú hamburguesa */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+
+        nav a:hover {
+            color: #00c3ff;
         }
-        .hamburger div {
-            width: 30px; height: 4px;
-            background: var(--text);
-            margin: 5px 0;
-            transition: 0.3s;
-        }
+
 
         /* HERO */
         .hero {
@@ -113,60 +71,76 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
             text-align: center;
+            padding: 0 20px;
         }
+
 
         .hero h1 {
             font-size: 3.2rem;
             color: #fff;
         }
-        .hero span { color: var(--primary); }
 
-        .typing {
-            border-right: 3px solid var(--primary);
-            animation: typing 3s steps(30), blink .7s infinite;
+
+        .hero h1 span {
+            color: #00c3ff;
         }
-        @keyframes blink { 50% { border-color: transparent; } }
+
+
+        .hero p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+        }
+
 
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: var(--primary);
+            background: #00c3ff;
             color: #fff;
-            border-radius: 25px;
             text-decoration: none;
-            margin-top: 20px;
+            border-radius: 25px;
             font-weight: 600;
-            box-shadow: 0 0 10px var(--primary);
             transition: 0.3s;
         }
+
+
         .btn:hover {
-            background: var(--primary-dark);
-            box-shadow: 0 0 20px var(--primary-dark);
+            background: #009ac7;
         }
 
-        /* Secciones */
-        section {
+
+        /* SOBRE MI */
+        .sobre-mi {
             padding: 90px 20px;
-        }
-        .contenedor {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            align-items: center;
+            background: #fff;
         }
 
-        /* Imagen perfil */
+
+        .contenedor {
+            display: flex;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+
         .foto-perfil {
             width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 10px;
         }
 
-        /* Portafolio */
+
+        /* NUEVA INFO para tono juvenil */
+        .texto-sobre-mi p {
+            margin-bottom: 10px;
+        }
+
+
+        /* PORTAFOLIO */
         .grid-proyectos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -175,135 +149,170 @@
             margin: auto;
         }
 
+
         .proyecto {
-            background: var(--card);
-            border-radius: 12px;
+            background: #fff;
             padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-        .proyecto:hover {
-            transform: translateY(-10px) scale(1.03);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .proyecto img { border-radius: 10px; width: 100%; }
+
+        .proyecto:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
 
         .btn-proyecto {
             display: inline-block;
+            margin-top: 10px;
             padding: 10px 20px;
-            background: var(--primary);
+            background: #000;
             color: #fff;
-            border-radius: 5px;
             text-decoration: none;
+            border-radius: 8px;
             transition: 0.3s;
         }
-        .btn-proyecto:hover { background: var(--primary-dark); }
 
-        /* Redes */
+
+        .btn-proyecto:hover {
+            background: #444;
+        }
+
+
+        /* CONTACTO */
+        .contacto {
+            padding: 90px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+
         .redes img {
-            width: 45px;
+            width: 40px;
             margin: 10px;
             transition: 0.3s;
         }
+
+
         .redes img:hover {
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
 
-        /* Footer */
+
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background: #000;
             color: #fff;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav { 
-                display: none; 
-                flex-direction: column;
-                background: var(--card);
-                position: absolute;
-                top: 70px; right: 20px;
-                padding: 15px;
-                border-radius: 10px;
-            }
-            nav.active { display: flex; }
-            .hamburger { display: flex; }
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- HEADER -->
+
     <header>
         <div class="logo">María Ouro</div>
-
-        <nav id="menu">
+        <nav>
             <a href="#inicio">Inicio</a>
             <a href="#sobre-mi">Sobre mí</a>
             <a href="#portafolio">Portafolio</a>
             <a href="#contacto">Contacto</a>
         </nav>
-
-        <div class="dark-toggle" id="darkBtn">☾</div>
-
-        <div class="hamburger" id="hamBtn">
-            <div></div><div></div><div></div>
-        </div>
     </header>
 
-    <!-- HERO -->
-    <section id="inicio" class="hero fade-in">
-        <div>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
             <h1>Hola, soy <span>María</span></h1>
-            <p class="typing">Desarrolladora Web | Diseñadora | Creativa</p>
+            <p style="color:white">Desarrolladora Web | Creativa | Amante del diseño</p>
             <a href="#portafolio" class="btn">Ver Portafolio</a>
         </div>
     </section>
 
-    <!-- SOBRE MI -->
-    <section id="sobre-mi" class="fade-in">
+
+    <section id="sobre-mi" class="sobre-mi">
         <div class="contenedor">
             <img src="imagenes/foto26.jpg" class="foto-perfil">
 
-            <div>
+
+            <div class="texto-sobre-mi">
                 <h2>Sobre mí</h2>
-                <p>Soy una profesional apasionada por la tecnología y el diseño.</p>
+                <p>Soy una chica de 16 años apasionada por la tecnología, el diseño y todo lo que tenga que ver con crear cosas chulas. Me encanta trabajar en equipo, aprender cosas nuevas y mejorar en cada proyecto.</p>
+                <p>He participado en varios proyectos como ABP, APS, SA y trabajos en grupo que me han enseñado a organizarme, comunicarme mejor y resolver problemas reales.</p>
+
 
                 <h3>Habilidades</h3>
                 <ul>
                     <li>HTML / CSS / JavaScript</li>
-                    <li>Diseño UI/UX</li>
+                    <li>Diseño UI/UX moderno</li>
                     <li>Responsive Design</li>
+                    <li>Creatividad y trabajo en equipo</li>
                     <li>Git & GitHub</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- PORTAFOLIO -->
-    <section id="portafolio" class="fade-in">
-        <h2 style="text-align:center; margin-bottom:20px;">Mi Portafolio</h2>
+
+    <section id="portafolio" class="portafolio">
+        <h2>Mis Proyectos</h2>
+
 
         <div class="grid-proyectos">
-            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 1</h3><p>Sitio web moderno.</p><a class="btn-proyecto">Ver más</a></div>
-            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 2</h3><p>Landing animada.</p><a class="btn-proyecto">Ver más</a></div>
-            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 3</h3><p>Dashboard interactivo.</p><a class="btn-proyecto">Ver más</a></div>
-            <div class="proyecto"><img src="https://via.placeholder.com/600x400"><h3>Proyecto 4</h3><p>App con API.</p><a class="btn-proyecto">Ver más</a></div>
+
+
+            <div class="proyecto">
+                <img src="https://via.placeholder.com/600x400">
+                <h3>Proyecto ABP</h3>
+                <p>Un proyecto colaborativo donde aprendí a organizar tareas y crear algo desde cero con mis compis.</p>
+                <a class="btn-proyecto">Ver más</a>
+            </div>
+
+
+            <div class="proyecto">
+                <img src="https://via.placeholder.com/600x400">
+                <h3>Proyecto APS</h3>
+                <p>Actividad en la que ayudamos a la comunidad con soluciones reales hechas por nosotras.</p>
+                <a class="btn-proyecto">Ver más</a>
+            </div>
+
+
+            <div class="proyecto">
+                <img src="https://via.placeholder.com/600x400">
+                <h3>Situación de Aprendizaje</h3>
+                <p>Un trabajo donde tuvimos que investigar, crear y exponer de manera clara y creativa.</p>
+                <a class="btn-proyecto">Ver más</a>
+            </div>
+
+
+            <div class="proyecto">
+                <img src="https://via.placeholder.com/600x400">
+                <h3>Trabajo en grupo</h3>
+                <p>Proyecto donde aprendí lo importante que es trabajar juntas y apoyarnos para lograr un resultado bonito.</p>
+                <a class="btn-proyecto">Ver más</a>
+            </div>
+
+
         </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="fade-in">
+
+    <section id="contacto" class="contacto">
         <h2>Contacto</h2>
+
+
         <form>
             <input type="text" placeholder="Nombre" required>
             <input type="email" placeholder="Correo electrónico" required>
             <textarea placeholder="Mensaje" required></textarea>
-            <button class="btn">Enviar</button>
+            <button>Enviar</button>
         </form>
+
 
         <div class="redes">
             <a><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
@@ -313,22 +322,13 @@
         </div>
     </section>
 
-    <footer>© 2025 María Ouro — Todos los derechos reservados.</footer>
 
-    <!-- JS -->
-    <script>
-        // Menú hamburguesa
-        const hamBtn = document.getElementById("hamBtn");
-        const menu = document.getElementById("menu");
-        hamBtn.onclick = () => menu.classList.toggle("active");
+    <footer>
+        © 2025 María Ouro — Portafolio Personal
+    </footer>
 
-        // Dark Mode
-        const darkBtn = document.getElementById("darkBtn");
-        darkBtn.onclick = () => {
-            document.body.classList.toggle("dark");
-            darkBtn.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
-        };
-    </script>
 
 </body>
+
+
 </html>
