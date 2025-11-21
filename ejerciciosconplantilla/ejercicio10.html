@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,245 +15,48 @@
 
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+        body { background: #f2f2f2; color: #333; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+        body.dark { background: #000; color: #fff; }
 
 
-        body {
-            background: #f2f2f2;
-            color: #333;
-            line-height: 1.6;
-            transition: background 0.3s, color 0.3s;
-        }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: #000; color: white; position: fixed; width: 100%; top: 0; z-index: 10; }
+        .logo { font-size: 1.6rem; font-weight: 700; color: white; }
+        nav a { margin-left: 20px; text-decoration: none; color: white; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: #00c3ff; }
 
 
-        /* HEADER */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background: #000;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-        }
+        .theme-toggle { cursor: pointer; font-size: 1.5rem; margin-left: 20px; }
 
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: white;
-        }
+        .hero { height: 100vh; background: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97") center/cover no-repeat; display: flex; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 3.2rem; color: #fff; }
+        .hero h1 span { color: #00c3ff; }
+        .hero p { color: #fff; font-size: 1.2rem; margin: 10px 0 20px; }
+        .btn { display: inline-block; padding: 12px 30px; background: #00c3ff; color: #fff; text-decoration: none; border-radius: 25px; font-weight: 600; transition: 0.3s; }
+        .btn:hover { background: #009ac7; }
 
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+        .sobre-mi { padding: 90px 20px; background: #fff; }
+        body.dark .sobre-mi { background: #111; }
+        .contenedor { display: flex; align-items: center; max-width: 1000px; margin: auto; gap: 30px; flex-wrap: wrap; }
+        .foto-perfil { width: 300px; border-radius: 10px; }
+        .texto-sobre-mi p { margin-bottom: 10px; }
 
 
-        nav a:hover {
-            color: #00c3ff;
-        }
+        .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
+        .proyecto { background: #fff; padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        body.dark .proyecto { background: #222; }
+        .proyecto:hover { transform: translateY(-8px); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); }
+        .btn-proyecto { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; transition: 0.3s; }
+        .btn-proyecto:hover { background: #444; }
 
 
-        #theme-toggle {
-            margin-left: 20px;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            background: #00c3ff;
-            color: #fff;
-        }
-
-
-        /* HERO */
-        .hero {
-            height: 100vh;
-            background: url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97") center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-
-        .hero h1 {
-            font-size: 3.2rem;
-            color: #fff;
-        }
-
-
-        .hero h1 span {
-            color: #00c3ff;
-        }
-
-
-        .hero p {
-            color: #fff;
-            font-size: 1.2rem;
-            margin: 10px 0 20px;
-        }
-
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #00c3ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-
-        .btn:hover {
-            background: #009ac7;
-        }
-
-
-        /* SOBRE MI */
-        .sobre-mi {
-            padding: 90px 20px;
-            background: #fff;
-        }
-
-
-        .contenedor {
-            display: flex;
-            align-items: center;
-            max-width: 1000px;
-            margin: auto;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-
-        .foto-perfil {
-            width: 300px;
-            border-radius: 10px;
-        }
-
-
-        .texto-sobre-mi p {
-            margin-bottom: 10px;
-        }
-
-
-        /* PORTAFOLIO */
-        .grid-proyectos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-
-        .proyecto {
-            background: #fff;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-
-        .proyecto:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-
-        .btn-proyecto {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-
-        .btn-proyecto:hover {
-            background: #444;
-        }
-
-
-        /* CONTACTO */
-        .contacto {
-            padding: 90px 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-
-        .redes img {
-            width: 40px;
-            margin: 10px;
-            transition: transform 0.3s;
-        }
-
-
-        .redes img:hover {
-            transform: scale(1.1);
-        }
-
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #000;
-            color: #fff;
-        }
-
-
-        /* TEMA OSCURO */
-        body.dark-mode {
-            background: #111;
-            color: #eee;
-        }
-
-
-        body.dark-mode header {
-            background: #222;
-        }
-
-
-        body.dark-mode .hero h1,
-        body.dark-mode .hero p {
-            color: #fff;
-        }
-
-
-        body.dark-mode .btn,
-        body.dark-mode .btn-proyecto,
-        body.dark-mode form button {
-            background: #00c3ff;
-            color: #fff;
-        }
-
-
-        body.dark-mode .proyecto {
-            background: #222;
-            box-shadow: 0 6px 15px rgba(255,255,255,0.1);
-        }
+        .contacto { padding: 90px 20px; background: #fff; text-align: center; }
+        body.dark .contacto { background: #111; }
+        .redes img { width: 40px; margin: 10px; transition: transform 0.3s; }
+        .redes img:hover { transform: scale(1.1); }
+        footer { text-align: center; padding: 15px; background: #000; color: #fff; }
     </style>
 </head>
 
@@ -266,8 +71,8 @@
             <a href="#sobre-mi">Sobre mí</a>
             <a href="#portafolio">Portafolio</a>
             <a href="#contacto">Contacto</a>
+            <span class="theme-toggle" id="theme-toggle">🌙</span>
         </nav>
-        <button id="theme-toggle">🌞</button>
     </header>
 
 
@@ -283,14 +88,10 @@
     <section id="sobre-mi" class="sobre-mi">
         <div class="contenedor">
             <img src="imagenes/foto26.jpg" class="foto-perfil">
-
-
             <div class="texto-sobre-mi">
                 <h2>Sobre mí</h2>
                 <p>Soy una chica de 16 años apasionada por la tecnología, el diseño y todo lo que tenga que ver con crear cosas chulas. Me encanta trabajar en equipo, aprender cosas nuevas y mejorar en cada proyecto.</p>
                 <p>He participado en varios proyectos como ABP, APS, SA y trabajos en grupo que me han enseñado a organizarme, comunicarme mejor y resolver problemas reales.</p>
-
-
                 <h3>Habilidades</h3>
                 <ul>
                     <li>HTML / CSS / JavaScript</li>
@@ -306,40 +107,38 @@
 
     <section id="portafolio" class="portafolio">
         <h2>Mis Proyectos</h2>
-
-
         <div class="grid-proyectos">
 
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400">
                 <h3>Proyecto ABP</h3>
-                <div class="info-extra">Un proyecto colaborativo donde aprendí a organizar tareas y crear algo desde cero con mis compis.</div>
-                <a href="proyecto-abp.html" class="btn-proyecto">Ver más</a>
+                <p>Un proyecto colaborativo donde aprendí a organizar tareas y crear algo desde cero con mis compis.</p>
+                <a href="https://revistaventanaabierta.es/aprendizaje-basado-en-proyectos-abp-en-el-aula-de-secundaria-fomentando-la-creatividad-y-el-aprendizaje-activo/" target="_blank" class="btn-proyecto">Ver más</a>
             </div>
 
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400">
                 <h3>Proyecto APS</h3>
-                <div class="info-extra">Actividad en la que ayudamos a la comunidad con soluciones reales hechas por nosotras.</div>
-                <a href="proyecto-aps.html" class="btn-proyecto">Ver más</a>
+                <p>Actividad en la que ayudamos a la comunidad con soluciones reales hechas por nosotras.</p>
+                <a href="https://www.vocaeditorial.com/blog/aprendizaje-servicio/#En-que-consiste-el-aprendizaje-servicio" target="_blank" class="btn-proyecto">Ver más</a>
             </div>
 
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400">
                 <h3>Situación de Aprendizaje</h3>
-                <div class="info-extra">Un trabajo donde tuvimos que investigar, crear y exponer de manera clara y creativa.</div>
-                <a href="proyecto-sa.html" class="btn-proyecto">Ver más</a>
+                <p>Un trabajo donde tuvimos que investigar, crear y exponer de manera clara y creativa.</p>
+                <a href="https://mad.es/blog/situaciones-aprendizaje/" target="_blank" class="btn-proyecto">Ver más</a>
             </div>
 
 
             <div class="proyecto">
                 <img src="https://via.placeholder.com/600x400">
                 <h3>Trabajo en grupo</h3>
-                <div class="info-extra">Proyecto donde aprendí lo importante que es trabajar juntas y apoyarnos para lograr un resultado bonito.</div>
-                <a href="proyecto-grupo.html" class="btn-proyecto">Ver más</a>
+                <p>Proyecto donde aprendí lo importante que es trabajar juntas y apoyarnos para lograr un resultado bonito.</p>
+                <a href="https://docsp.aulaplaneta.com/sites/all/files_old/dinamicas_trabajo_colaborativo.pdf" target="_blank" class="btn-proyecto">Ver más</a>
             </div>
 
 
@@ -349,16 +148,12 @@
 
     <section id="contacto" class="contacto">
         <h2>Contacto</h2>
-
-
         <form>
             <input type="text" placeholder="Nombre" required>
             <input type="email" placeholder="Correo electrónico" required>
             <textarea placeholder="Mensaje" required></textarea>
             <button>Enviar</button>
         </form>
-
-
         <div class="redes">
             <a><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
             <a><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></a>
@@ -368,22 +163,17 @@
     </section>
 
 
-    <footer>
-        © 2025 María Ouro — Portafolio Personal
-    </footer>
+    <footer>© 2025 María Ouro — Portafolio Personal</footer>
 
 
     <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            toggleButton.textContent = body.classList.contains('dark-mode') ? '🌜' : '🌞';
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
         });
     </script>
 
 
 </body>
-
-
 </html>
